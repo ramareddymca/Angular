@@ -1,5 +1,5 @@
 <div id="product-list" class="container">
-  <h3>Products</h3>
+  <h3>Products</h3> 
 
   <table class="table table-striped table-hover ">
     <tr>
@@ -7,14 +7,14 @@
       <th>Desc</th>
       <th>Price</th>
       <th>Rating</th>
-      <th>Price2</th>    
+      <th>Link</th>    
     </tr>
-    <tr *ngFor="let product of products">
+     <tr *ngFor="let product of products">      
       <td>{{product.name}}</td>
-      <td>{{product.desc}}</td>
-      <td [ngClass]="{'high-valued': product.price > 10}">{{product.price}}</td>
+      <td>{{product.prodDesc}}</td>
+      <td>{{product.price}} </td>
       <td>{{product.rating}}</td>
-      <td>{{product.price}}</td>
+      <td>{{product.prodImg}}</td>
     </tr>
   </table>
 </div>
