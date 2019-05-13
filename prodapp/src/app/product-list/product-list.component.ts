@@ -32,6 +32,13 @@ export class ProductListComponent implements OnInit {
     )
   }
   
+onDeleted(productId: number) {
+    this.productsService.delete(productId)
+      .subscribe(
+        (data) => this.getProducts()
+      );
+  }
+  
  getMockProducts(){ 
  return [
   new Product(1,'Laptop','Dell laptop',2,20000,'link'),

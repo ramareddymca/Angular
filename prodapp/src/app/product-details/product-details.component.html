@@ -1,0 +1,29 @@
+<div id="product-details" class="container">
+<p>
+  Selected product-details
+</p>
+
+<div class="row product">
+  <div class="col-md-3"><img [src]="product.prodImg"></div>
+  <div class="col-md-7">
+    <div class="row">
+      <div class="col-md-12">{{product.name}}</div>    
+      <div class="col-md-12">
+        <ngb-rating [(rate)]="product.rating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+      </div>
+      <div class="col-md-12">{{product.price | currency:'INR'}}</div>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <button type="button" btn btn-primary ml-auto (click)="onUpdate()">Update</button>
+    <a [routerLink]="[ '' ]" class="btn btn-outline-dark mr-auto">Home</a>
+  </div>  
+</div>
+
+<!-- Rating template : https://ng-bootstrap.github.io/#/components/rating/examples#decimal -->
+<ng-template #t let-fill="fill">
+  <span class="star" [class.full]="fill === 100">
+    <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+  </span>
+</ng-template>
+  </div>
