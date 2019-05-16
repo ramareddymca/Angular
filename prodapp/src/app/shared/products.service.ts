@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductsService {
 
-  url = 'http://localhost:7000/api/products';
+  url = 'http://localhost:7001/api/products';
 
   constructor(private httpClient: HttpClient) { }
   
@@ -27,6 +27,10 @@ export class ProductsService {
   
   create(product: Product):Observable<any> {    
     return this.httpClient.post<Product>(this.url, product);
+  }
+  
+  update(product: Product) {
+    return this.httpClient.put(this.url + `/${product.id}`, product);
   }
   
   getMockProducts(): Product[]{ 

@@ -34,6 +34,15 @@ constructor(
     )
   }
   
+  private onSubmit() {
+    console.table(this.product);
+    this.productsService.update(this.product)
+      .subscribe(product => {
+        alert('Product updated Successfully');
+      }
+      );
+  }
+  
   private cancelAddProduct() {
     this.router.navigate(['']);
   }
