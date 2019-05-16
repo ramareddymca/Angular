@@ -12,6 +12,7 @@ export class ProductNewComponent implements OnInit {
 
    product: Product;  
   @ViewChild('productForm') form: any;
+  title = 'New Product';
 
    constructor(private productsService: ProductsService, private router: Router) { }
 

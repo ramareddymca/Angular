@@ -1,43 +1,5 @@
-<div id="new-product" class="container">
+<div id="product-details" class="container">
     <h3>Update Product</h3>
-    <hr>
-    <!-- https://codecraft.tv/courses/angular/forms/template-driven -->
-    <form name="form" role="form" (ngSubmit)="onSubmit()" #productForm="ngForm">
-        
-        <div class="form-group">
-            <label class="form-control-label" for="name">Name</label>
-            <input type="text" class="form-control" [(ngModel)]="product.name" name="name" #name="ngModel"
-                placeholder="Product Name" required minlength="2" maxlength="10">         
-        </div>
-
-        <div class="form-group">
-            <label class="form-control-label" for="desc">Description</label>
-            <textarea class="form-control" [(ngModel)]="product.prodDesc" name="prodDesc" #prodDesc="ngModel"
-                placeholder="Product Description"></textarea>
-        </div>
-
-        <div class="form-group">
-            <label class="form-control-label" for="price">Price</label>
-            <input type="number" class="form-control" [(ngModel)]="product.price" name="price" #price="ngModel"
-                placeholder="Price">
-        </div>
-
-        <div class="form-group">
-            <label class="form-control-label" for="rating">Rating</label>
-            <input type="number" class="form-control" [(ngModel)]="product.rating" name="rating" #rating="ngModel"
-            placeholder="Rating">
-        </div>
-
-        <div class="form-group">
-            <label class="form-control-label" for="imageUrl">Product Image Url</label>
-            <input type="text" class="form-control" [(ngModel)]="product.prodImg" name="prodImg" #prodImg="ngModel"
-                placeholder="Image Url">
-        </div>
-
-        <div class="d-flex">         
-            <a [routerLink]="[ '' ]" class="btn btn-outline-dark mr-auto">Cancel</a>
-            <button type="submit" class="btn btn-success " [disabled]="productForm.invalid">Submit</button>
-        </div>
-    </form>
-    <hr>
 </div>
+    
+   

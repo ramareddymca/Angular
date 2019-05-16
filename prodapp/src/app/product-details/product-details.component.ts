@@ -5,13 +5,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-details',
-  templateUrl: './product-details.component.html',
+  templateUrl: '../product-new/product-new.component.html',
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
 
   product: Product;
   productId: string;
+  title = 'Update Product';
 
   @ViewChild('productForm') form: any;
 
