@@ -3,26 +3,16 @@
     <hr>
     <!-- https://codecraft.tv/courses/angular/forms/template-driven -->
     <form name="form" role="form" (ngSubmit)="onSubmit()" #productForm="ngForm">
+        
         <div class="form-group">
             <label class="form-control-label" for="name">Name</label>
             <input type="text" class="form-control" [(ngModel)]="product.name" name="name" #name="ngModel"
-                placeholder="Product Name" required minlength="2" maxlength="50">
-            <div *ngIf="name.dirty && name.invalid">
-                <small class="form-text text-danger" *ngIf="name.errors.required">
-                    Product name is required.
-                </small>
-                <small class="form-text text-danger" *ngIf="name.errors.minlength">
-                    Product name is required to be at least 2 characters.
-                </small>
-                <small class="form-text text-danger" *ngIf="name.errors.maxlength">
-                    Product name cannot be longer than 50 characters.
-                </small>
-            </div>
+                placeholder="Product Name" required minlength="2" maxlength="10">         
         </div>
 
         <div class="form-group">
             <label class="form-control-label" for="desc">Description</label>
-            <textarea class="form-control" [(ngModel)]="product.desc" name="desc" #desc="ngModel"
+            <textarea class="form-control" [(ngModel)]="product.prodDesc" name="prodDesc" #prodDesc="ngModel"
                 placeholder="Product Description"></textarea>
         </div>
 
@@ -39,13 +29,12 @@
         </div>
 
         <div class="form-group">
-            <label class="form-control-label" for="imageUrl">Image Url</label>
-            <input type="text" class="form-control" [(ngModel)]="product.imageUrl" name="imageUrl" #imageUrl="ngModel"
+            <label class="form-control-label" for="imageUrl">Product Image Url</label>
+            <input type="text" class="form-control" [(ngModel)]="product.prodImg" name="prodImg" #prodImg="ngModel"
                 placeholder="Image Url">
         </div>
 
-        <div class="d-flex">
-            <!-- <button type="button" class="btn btn-outline-dark " (click)="cancelAddProduct()" >Cancel</button> -->
+        <div class="d-flex">         
             <a [routerLink]="[ '' ]" class="btn btn-outline-dark mr-auto">Cancel</a>
             <button type="submit" class="btn btn-success " [disabled]="productForm.invalid">Submit</button>
         </div>

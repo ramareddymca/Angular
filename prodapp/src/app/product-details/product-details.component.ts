@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Product } from '../shared/product.model';
 import { ProductsService } from '../shared/products.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -12,6 +12,8 @@ export class ProductDetailsComponent implements OnInit {
 
   product: Product;
   productId: string;
+
+  @ViewChild('productForm') form: any;
 
 constructor(
     private productsService: ProductsService,
